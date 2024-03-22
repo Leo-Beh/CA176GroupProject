@@ -11,7 +11,7 @@ Note test_function_unformatted_k by Zi:
 Run this program to obtain a clean version of the df where all characters values such as "76k", replaced with 76000. Use this if you need to do calculations etc. 
 
 Note test_for_1 by Zi:
-Got bored, wrote a demo version for Q1 feel free to make use and changes, also there is ambiguity on do I save complex attribute uniquely or independently
+Got bored, wrote a demo version for Q1 feel free to make use and changes, also there is ambiguity on do I save complex attribute uniquely or independently. For part 2, it is again ambiguous on should you save the result as a variable tabel, a new unique df or and add the new column for the exist df.
 
 Note Q.8 by Zi:
 Unsure of what it means by "i.e., the mean of the column 'Avg_Salary_’ created in task 6."
