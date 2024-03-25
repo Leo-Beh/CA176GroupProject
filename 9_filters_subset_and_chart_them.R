@@ -16,7 +16,7 @@ filtered_companies_df <- companies_df %>%
 # Creating a scatter plot to visualize the relationship between company rating and average salary
 ggplot(data = filtered_companies_df, aes(x = Avg_salary, y = Ratings)) +
   geom_point(aes(colour = Ratings), shape = 16, alpha = 0.7) +
-  geom_smooth(method = "lm", color = "black", se = FALSE) +
+  geom_smooth(method = "lm", color = "black", se = TRUE) +
   scale_color_gradient(low = "blue", high = "green") +
   theme_bw() +
   
@@ -38,4 +38,5 @@ ggplot(data = filtered_companies_df, aes(x = Avg_salary, y = Ratings)) +
         axis.text = element_text(size = 10, face = "italic"),  # Adjust text size
         axis.title = element_text(size = 12, face = "bold.italic"))  # Adjust title size and font 
 
-# Conclusion we see a very slight negative correlation between a company's rating and the average salary 
+# Conclusion we see a very slight negative correlation between a company's rating and the average salary
+# Since most points falls outside the confidence interval(grey area), we can also conclude that linear model might not be a good fit
