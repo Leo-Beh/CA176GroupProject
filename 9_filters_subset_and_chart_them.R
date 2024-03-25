@@ -6,7 +6,6 @@ library(ggplot2)
 # Reading the raw company data
 companies_df <- read_excel("companies.xlsx")
 
-
 # filtering and limiting the company df
 filtered_companies_df <- companies_df %>%
   filter(Highly_rated_for == "Job Security")%>%  
@@ -25,10 +24,18 @@ ggplot(data = filtered_companies_df, aes(x = Avg_salary, y = Ratings)) +
        x = "Average Salary",
        y = "Ratings") +
   
-  scale_x_log10(labels = scales::comma) +  # Scale the x axis 
-  theme(plot.title = element_text(hjust = 0.5),  # Center the plot title
+#  scale_x_log10(labels = scales::comma) + # Scale the x axis
+  scale_x_continuous(labels = scales::comma,
+                     # breaks = scales::pretty_breaks(n = ),
+                     # breaks = function(x) 10^pretty(log10(range(x, finite = TRUE))),
+                     trans = "log10") +
+  scale_y_continuous(limits = c(2, 5),
+                     breaks = 2:5,
+                     labels = c("2 Fair","3 Good", "4 Very Good", "5 Excellent")) +
+  
+  theme(plot.title = element_text(hjust = 0.5, face = "bold.italic"),  # Center the plot title
         legend.position = "right",  # Adjust legend position
-        axis.text = element_text(size = 12),  # Adjust text size
-        axis.title = element_text(size = 13, face = "bold"))  # Adjust title size and font 
+        axis.text = element_text(size = 10, face = "italic"),  # Adjust text size
+        axis.title = element_text(size = 12, face = "bold.italic"))  # Adjust title size and font 
 
 # Conclusion we see a very slight negative correlation between a company's rating and the average salary 
