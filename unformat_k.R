@@ -6,7 +6,6 @@ companies_df <- read_excel("companies.xlsx")
 unformat_numeric <- function(input) {
   
   # Empty vector to store formatted values 
-  # formatted_input <- c()
   formatted_input <- numeric(length(input))
     
   # To loop through every element in the column
@@ -40,10 +39,4 @@ unformatted_companies_df <- companies_df %>%
          )
 
 print(unformatted_companies_df)
-
 View(unformatted_companies_df)
-
-
-
-
-
