@@ -24,7 +24,7 @@ ggplot(data = filtered_companies_df, aes(x = Avg_salary, y = Ratings)) +
        subtitle = "For comapnies only rated for Job Security",
        x = "Average Salary",
        y = "Ratings",
-       caption = "A very weak correlation between average salary and rating for companies who are only highly rated for Job security") +
+       caption = "A very weak correlation between average salary \n and rating for companies who are only highly rated for Job security") +
   
 #  scale_x_log10(labels = scales::comma) + # Scale the x axis
   scale_x_continuous(labels = scales::comma,
@@ -37,6 +37,7 @@ ggplot(data = filtered_companies_df, aes(x = Avg_salary, y = Ratings)) +
   
   theme(plot.title = element_text(hjust = 0.5, face = "bold.italic"),# Center the plot title
         plot.subtitle = element_text(hjust = 0.5, face = "italic"),
+        plot.caption = element_text(hjust = 0, face = 'italic'),
         legend.position = "right",  # Adjust legend position
         axis.text = element_text(size = 10, face = "italic"),  # Adjust text size
         axis.title = element_text(size = 12, face = "bold.italic"))  # Adjust title size and font 
