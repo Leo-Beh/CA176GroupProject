@@ -10,7 +10,6 @@ class(critically_rated_freq_count)
 
 names(critically_rated_freq_count)[names(critically_rated_freq_count) == "--"] <- "NA"
 
-critically_rated_freq_count
 
 total_observations <- sum(critically_rated_freq_count)
 
@@ -20,6 +19,7 @@ result_df <- data.frame(
   Critically_Rated_Aspects = names(proportions),
   Critically_Rated_Proportions = as.numeric(proportions))
 
-result_df
 
+result_df
+View(critically_rated_freq_count)
 proportions
