@@ -2,7 +2,7 @@ library(readxl)
 library("dplyr")
 
 
-unformat_numeric_df <- function(df, column_names) {
+#unformat_numeric_df <- function(df, column_names) {
   # Loop through every given column
   for (col_name in column_names) {
     # Empty vector to store formatted value
@@ -33,6 +33,6 @@ unformat_numeric_df <- function(df, column_names) {
   return(df)
 }
 
-underscore_unformatted_companies_df <- unformat_numeric_df(companies_df, c("Avg_salary", "Interviews_taken", "Total_jobs_available", "Total_reviews", "Total_benefits"))
+# underscore_unformatted_companies_df <- unformat_numeric_df(companies_df, c("Avg_salary", "Interviews_taken", "Total_jobs_available", "Total_reviews", "Total_benefits"))
 
-View(underscore_unformatted_companies_df)
+# View(underscore_unformatted_companies_df)
