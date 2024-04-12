@@ -17,7 +17,7 @@ filtered_companies_df <- companies_df %>%
 # Load graph ------------------------------------
 ggplot(data = filtered_companies_df, aes(x = Avg_salary, y = Ratings)) +        # Creating a scatter-plot with "Avg_salary" in x-axis and "Ratings" in y-axis
   geom_point(aes(colour = Ratings), shape =16 , alpha = 0.7) +                  # Setting up the aesthetic of the points
-  geom_smooth(method = "gam", color = "black", size = 0.7, se = TRUE) +         # Creating a line of best fit
+  geom_smooth(method = "gam", color = "black", linewidth = 0.7, se = TRUE) +         # Creating a line of best fit
   scale_color_gradient(low = "yellow", high = "#D22B2B") +                      # Scale the point colours base on the "Ratings"
   theme_bw() +                                                                  # Setting up a black and white background
   
@@ -45,3 +45,5 @@ ggplot(data = filtered_companies_df, aes(x = Avg_salary, y = Ratings)) +        
         legend.position = "right",
         axis.text = element_text(size = 10, face = "italic"),
         axis.title = element_text(size = 12, face = "bold.italic"))
+
+ggsave("Scatter_Plot_of_Avg_Salary_vs_Ratings.png", width = 7, height = 5)
